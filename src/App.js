@@ -1,21 +1,33 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import AppContainer from './components/app-container'
+import './App.css'
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      prefeitos: [],
+      vereadores: []
+    }
+  }
+
+  componentWillMount() {
+    fetch('http://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2016/81418/2/11/candidatos')
+      .then((response) => {
+        return response.json()
+      })
+      .then((prefeitos) => {
+        this.setState({ prefeitos: prefeitos })
+      })
+  }
+
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+      <AppContainer
+        prefeitos={this.state.prefeitos}
+      />
+    )
   }
 }
 
-export default App;
+export default App
