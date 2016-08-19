@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Menu = () =>{
+const Menu = () => {
   return (
     <nav className='menu'>
       <ul className='menu-list'>
