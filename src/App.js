@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import AppContainer from './components/app-container'
 import './App.css'
 
@@ -7,17 +8,24 @@ class App extends Component {
     super()
     this.state = {
       prefeitos: [],
-      vereadores: []
+      vereadores: [],
+      isFetching: true
     }
   }
 
   componentWillMount() {
-    fetch('http://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2016/81418/2/11/candidatos')
-      .then((response) => {
-        return response.json()
+    axios.get('http://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2016/81418/2/11/candidatos')
+      .then(response => {
+        this.setState({
+          prefeitos: response.data.candidatos
+        }, () => {
+          this.setState({
+            isFetching: false
+          })
+        })
       })
-      .then((prefeitos) => {
-        this.setState({ prefeitos: prefeitos })
+      .catch(error => {
+        console.log(error);
       })
   }
 
@@ -25,6 +33,7 @@ class App extends Component {
     return (
       <AppContainer
         prefeitos={this.state.prefeitos}
+        isFetching={this.state.isFetching}
       />
     )
   }

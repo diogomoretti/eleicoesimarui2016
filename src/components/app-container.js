@@ -1,8 +1,16 @@
 import React from 'react'
+import Header from './header'
 
-const AppContainer = ({ prefeitos }) => {
+const AppContainer = ({
+    prefeitos,
+    isFetching
+  }) => {
   return (
-    <div>{console.log(prefeitos)}</div>
+    <main>
+      <Header />
+      {isFetching && <div>carregando</div>}
+      {!isFetching && console.log(prefeitos)}
+    </main>
   )
 }
 
