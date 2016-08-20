@@ -1,16 +1,20 @@
 import React from 'react'
 import Header from './header'
+import Content from './content'
 
 const AppContainer = ({
     prefeitos,
     isFetching
   }) => {
   return (
-    <main>
+    <div>
       <Header />
-      {isFetching && <div>carregando</div>}
-      {!isFetching && console.log(prefeitos)}
-    </main>
+      <main className='main'>
+        {isFetching && <div>carregando</div>}
+        {!isFetching && console.log(prefeitos)}
+        <Content className='prefeitos' list={prefeitos} />
+      </main>
+    </div>
   )
 }
 

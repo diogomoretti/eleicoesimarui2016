@@ -14,7 +14,7 @@ class App extends Component {
   }
 
   componentWillMount() {
-    axios.get('http://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2016/81418/2/11/candidatos')
+    axios.get('http://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2016/81418/2/13/candidatos')
       .then(response => {
         this.setState({
           prefeitos: response.data.candidatos

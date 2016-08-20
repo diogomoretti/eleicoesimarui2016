@@ -10,6 +10,9 @@ body {
   margin: 0;
   background: #eee;
   font-family: 'Montserrat', Arial, sans-serif;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .header-wrapper {
@@ -34,7 +37,10 @@ body {
 
 .header {
   height: 100px;
-  background: #1e8bc3;
+  background: linear-gradient(45deg, hsla(191, 97%, 45%, 1) 0%, hsla(191, 97%, 45%, 0) 70%),
+              linear-gradient(135deg, hsla(234, 99%, 45%, 1) 10%, hsla(234, 99%, 45%, 0) 80%),
+              linear-gradient(225deg, hsla(184, 96%, 49%, 1) 10%, hsla(184, 96%, 49%, 0) 80%),
+              linear-gradient(315deg, hsla(28, 92%, 45%, 1) 100%, hsla(28, 92%, 45%, 0) 70%);
 }
 
 .header-logo {
@@ -69,4 +75,61 @@ body {
 .menu-link:hover {
   background: rgba(0, 0, 0, .2);
   border-radius: 2px;
+}
+
+.main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.candidates-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.candidate-item {
+  position: relative;
+  background: #fff;
+  padding: 2em 1em 1em 25em;
+  margin: 1em 0;
+  min-height: 14em;
+}
+
+.candidate-item__avatar-wrapper {
+  position: absolute;
+  left: 6em;
+  top: 1em;
+  width: 12em;
+  height: 12em;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.candidate-item__avatar-item {
+  max-width: 100%;
+}
+
+.candidate-item__name {
+  color: #444;
+  margin: .4em 0;
+  padding: 0;
+  font-size: 2.5em;
+}
+
+.candidate-item__number {
+  display: inline-block;
+  background: #D24D57;
+  color: #fff;
+  border-radius: 3px;
+  padding: .1em .6em .28em;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.candidate-item__partido {
+  color: #999;
+  font-size: 1.4em;
+  margin: 0;
 }
