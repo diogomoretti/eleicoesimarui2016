@@ -7,17 +7,33 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      prefeitos: [],
-      vereadores: [],
-      isFetching: true
+      data: [],
+      isFetching: true,
+      candidateType: 'prefeitos'
+    }
+  }
+
+  handleMenu(type) {
+    return (type) => {
+      this.setState({
+        candidateType: type
+      }, () => {
+        this.getData()
+      })
     }
   }
 
   componentWillMount() {
-    axios.get('http://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2016/81418/2/13/candidatos')
+    this.getData()
+  }
+
+  getData() {
+    let candidateCode = (this.state.candidateType === 'prefeitos') ? '11' : '13'
+
+    axios.get(`http://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2016/81418/2/${candidateCode}/candidatos`)
       .then(response => {
         this.setState({
-          prefeitos: response.data.candidatos
+          data: response.data.candidatos
         }, () => {
           this.setState({
             isFetching: false
@@ -32,8 +48,10 @@ class App extends Component {
   render() {
     return (
       <AppContainer
-        prefeitos={this.state.prefeitos}
+        data={this.state.data}
         isFetching={this.state.isFetching}
+        candidateType={this.state.candidateType}
+        handleMenu={this.handleMenu(this.state.candidateType)}
       />
     )
   }

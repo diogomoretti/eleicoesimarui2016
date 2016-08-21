@@ -1,13 +1,13 @@
 import React from 'react'
 import Candidate from './candidate'
 
-const Content = ({ className, list }) => {
+const Content = ({ className, data }) => {
   return (
     <section className={`section-candidates section-candidates--${className}`}>
       <div className='section-wrapper'>
         <ul className='candidates-list'>
-          {list.map((result) => {
-            return <Candidate key={result.id} candidate={result} />
+          {data.map((item) => {
+            return <Candidate key={item.id} candidate={item} />
           })}
         </ul>
       </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import Menu from './menu'
 
-const Header = () => {
+const Header = ({ candidateType, handleMenu }) => {
   return (
     <header className='header'>
       <div className='header-wrapper'>
@@ -9,7 +9,7 @@ const Header = () => {
           <h1 className='header-logo'>Imaruí Eleições 2016</h1>
         </div>
         <div className='header-menu'>
-          <Menu />
+          <Menu candidateType={candidateType} handleMenu={handleMenu} />
         </div>
       </div>
     </header>

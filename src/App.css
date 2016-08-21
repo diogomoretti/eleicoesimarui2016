@@ -22,34 +22,27 @@ body {
   display: flex;
 }
 
-.header-title,
-.header-menu {
-  flex: 1;
-}
-
 .header-title {
-  padding-top: 3.7em;
+  width: 20%;
+  padding-top: .7em;
 }
 
 .header-menu {
+  width: 80%;
   padding-top: 3.3em;
 }
 
 .header {
   height: 100px;
-  background: linear-gradient(45deg, hsla(191, 97%, 45%, 1) 0%, hsla(191, 97%, 45%, 0) 70%),
-              linear-gradient(135deg, hsla(234, 99%, 45%, 1) 10%, hsla(234, 99%, 45%, 0) 80%),
-              linear-gradient(225deg, hsla(184, 96%, 49%, 1) 10%, hsla(184, 96%, 49%, 0) 80%),
-              linear-gradient(315deg, hsla(28, 92%, 45%, 1) 100%, hsla(28, 92%, 45%, 0) 70%);
+  background: #0b6e93;
 }
 
 .header-logo {
-  font-size: 2em;
-  font-weight: bold;
-  color: #fff;
-  text-transform: uppercase;
-  margin: 0;
-  padding: 0;
+  background: url('http://www.imarui.sc.gov.br/thumbs/642/1035164_resize_1000_.png') no-repeat;
+  background-size: 100%;
+  max-width: 4em;
+  height: 3em;
+  text-indent: -9999em;
 }
 
 .menu {
@@ -70,9 +63,12 @@ body {
   font-size: 1.3em;
   text-decoration: none;
   padding: .6em 1.5em .7em;
+  cursor: pointer;
 }
 
-.menu-link:hover {
+.menu-link:hover,
+.menu-link--prefeitos.prefeitos,
+.menu-link--vereadores.vereadores {
   background: rgba(0, 0, 0, .2);
   border-radius: 2px;
 }
@@ -105,6 +101,7 @@ body {
   height: 12em;
   border-radius: 50%;
   overflow: hidden;
+  border: 1px solid #ddd;
 }
 
 .candidate-item__avatar-item {
@@ -132,4 +129,32 @@ body {
   color: #999;
   font-size: 1.4em;
   margin: 0;
+}
+
+@media screen and (max-width: 580px) {
+
+  .candidate-item {
+    padding: 2em 1em 1em 13em;
+    min-height: 13em;
+  }
+
+  .candidate-item__avatar-wrapper {
+    width: 8em;
+    height: 8em;
+    left: 2em;
+    top: 2em;
+  }
+
+  .candidate-item__number {
+    font-size: 1.5em;
+  }
+
+  .candidate-item__name {
+    font-size: 1.6em;
+  }
+
+  .candidate-item__partido {
+    font-size: 1.2em;
+  }
+
 }

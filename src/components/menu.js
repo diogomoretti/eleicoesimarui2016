@@ -1,14 +1,14 @@
 import React from 'react'
 
-const Menu = () => {
+const Menu = ({ candidateType, handleMenu }) => {
   return (
     <nav className='menu'>
       <ul className='menu-list'>
         <li className='menu-item'>
-          <a className='menu-link' href='#'>Prefeitos</a>
+          <span onClick={() => handleMenu('prefeitos')} className={`menu-link menu-link--prefeitos ${candidateType}`}>Prefeitos</span>
         </li>
         <li className='menu-item'>
-          <a className='menu-link' href='#'>Vereadores</a>
+          <span onClick={() => handleMenu('vereadores')} className={`menu-link menu-link--vereadores ${candidateType}`}>Vereadores</span>
         </li>
       </ul>
     </nav>
