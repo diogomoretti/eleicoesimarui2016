@@ -30,7 +30,7 @@ class App extends Component {
   getData() {
     let candidateCode = (this.state.candidateType === 'prefeitos') ? '11' : '13'
 
-    axios.get(`http://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2016/81418/2/${candidateCode}/candidatos/`)
+    axios.get(`//divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2016/81418/2/${candidateCode}/candidatos`)
       .then(response => {
         this.setState({
           data: response.data.candidatos
