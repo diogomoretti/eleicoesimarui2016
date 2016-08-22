@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './header'
 import Content from './content'
+import Loading from './loading'
 
 const AppContainer = ({
     data,
@@ -12,9 +13,8 @@ const AppContainer = ({
     <div>
       <Header candidateType={candidateType} handleMenu={handleMenu} />
       <main className='main'>
-        {isFetching && <div>carregando</div>}
-        {!isFetching && console.log(data)}
-        <Content className={candidateType} data={data} />
+        {isFetching && <Loading />}
+        {!isFetching && <Content className={candidateType} data={data} />}
       </main>
     </div>
   )

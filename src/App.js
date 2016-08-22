@@ -16,7 +16,8 @@ class App extends Component {
   handleMenu(type) {
     return (type) => {
       this.setState({
-        candidateType: type
+        candidateType: type,
+        isFetching: true
       }, () => {
         this.getData()
       })
@@ -30,7 +31,7 @@ class App extends Component {
   getData() {
     let candidateCode = (this.state.candidateType === 'prefeitos') ? '11' : '13'
 
-    axios.get(`//divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2016/81418/2/${candidateCode}/candidatos`)
+    axios.get(`http://divulgacandcontas.tse.jus.br/divulga/rest/v1/candidatura/listar/2016/81418/2/${candidateCode}/candidatos`)
       .then(response => {
         this.setState({
           data: response.data.candidatos
