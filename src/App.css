@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-size: 62.5%;
   padding: 0;
@@ -13,6 +17,10 @@ body {
   height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root, .app {
+  height: 100%;
 }
 
 .header-wrapper {
@@ -73,7 +81,7 @@ body {
 
 .menu-link--prefeitos.prefeitos,
 .menu-link--vereadores.vereadores {
-  background: rgba(0, 0, 0, .2);
+  background: rgba(0, 0, 0, .3);
 }
 
 .menu-link:hover {
@@ -84,6 +92,7 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding: 0 1em;
+  min-height: 90%;
 }
 
 .candidates-list {
@@ -158,6 +167,31 @@ body {
   animation: loading-circle 2s linear infinite;
   stroke: #0b6e93;
   fill: transparent;
+}
+
+.footer {
+  margin-top: 5em;
+  background: #ddd;
+}
+
+.footer-wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2em 0;
+}
+
+.footer-message {
+  font-size: 1.2em;
+  color: #888;
+  text-align: center;
+  line-height: 1.8em;
+  margin: 0;
+}
+
+.footer-link {
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
 }
 
 @keyframes loading {
