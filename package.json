@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && node cname.js",
     "eject": "react-scripts eject",
     "gh-pages": "git checkout -B gh-pages && git add -f build && git commit -am \"Rebuild website\" && git push origin :gh-pages && git subtree push --prefix build origin gh-pages && git checkout -"
   },
