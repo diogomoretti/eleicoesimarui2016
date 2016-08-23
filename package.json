@@ -1,8 +1,6 @@
 {
-  "name": "imarui-eleicoes-2016",
-  "homepage": "http://diogomoretti.github.io/imarui-eleicoes-2016",
+  "name": "eleicoesimarui2016",
   "version": "0.0.1",
-  "private": true,
   "devDependencies": {
     "axios": "^0.13.1",
     "react-scripts": "0.2.1"
