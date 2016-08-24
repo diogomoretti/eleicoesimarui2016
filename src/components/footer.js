@@ -14,7 +14,7 @@ const Footer = () => {
           Essa é uma aplicação open-source e sob a <a className='footer-link' href='https://pt.wikipedia.org/wiki/Licen%C3%A7a_MIT' target='_blank'>licença MIT</a>. Todo o código pode ser encontrado no <a className='footer-link' href='https://github.com/diogomoretti/eleicoesimarui2016.org' target='_blank'>Github</a>.
         </p>
         <p className='footer-message'>
-          Caso essa página esteja infringindo alguma lei ou algum terceiro se sinta sendo prejudicado, por favor entre em contato para que os devidos procedimentos sejam feitos.
+          Caso essa página esteja infringindo alguma lei ou algum terceiro se sinta prejudicado, por favor entre em contato para que todos os procedimentos sejam tomados.
         </p>
       </div>
     </footer>
