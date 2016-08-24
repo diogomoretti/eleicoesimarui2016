@@ -13,7 +13,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build && node cname.js",
     "eject": "react-scripts eject",
-    "gh-pages": "git checkout -B gh-pages && git add -f build && git commit -am \"Rebuild website\" && git push origin :gh-pages && git subtree push --prefix build origin gh-pages && git checkout -"
+    "gh-pages": "git checkout -B gh-pages && git add -f build && git commit -am \"Rebuild website\" && git push origin :gh-pages && git subtree push --prefix build origin gh-pages && git checkout -",
+    "deploy": "npm run build && npm run gh-pages"
   },
   "eslintConfig": {
     "extends": "./node_modules/react-scripts/config/eslint.js"
