@@ -80,12 +80,9 @@ body {
 }
 
 .menu-link--prefeitos.prefeitos,
-.menu-link--vereadores.vereadores {
-  background: rgba(0, 0, 0, .3);
-}
-
+.menu-link--vereadores.vereadores,
 .menu-link:hover {
-  background: rgba(0, 0, 0, .05);
+  background: rgba(0, 0, 0, .3);
 }
 
 .main {
@@ -102,11 +99,41 @@ body {
 }
 
 .candidate-item {
-  position: relative;
   background: #fff;
-  padding: 2em 1em 1em 25em;
   margin: 1em 0;
+  overflow: hidden;
+  transition: max-height 1.4s ease;
+  max-height: 14em;
+}
+
+.candidate-item.true {
+  max-height: 600px;
+}
+
+.candidate-item-main {
+  position: relative;
+  padding: 2em 1em 1em 25em;
   min-height: 14em;
+  clear: both;
+  cursor: pointer;
+}
+
+.candidate-item-main:before {
+  content: '';
+  width: 2.5em;
+  height: 2.2em;
+  position: absolute;
+  right: 4em;
+  top: 42%;
+  background-image: url('data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDMwNiAzMDYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMwNiAzMDY7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8ZyBpZD0iZXhwYW5kLW1vcmUiPgoJCTxwb2x5Z29uIHBvaW50cz0iMjcwLjMsNTguNjUgMTUzLDE3NS45NSAzNS43LDU4LjY1IDAsOTQuMzUgMTUzLDI0Ny4zNSAzMDYsOTQuMzUgICAiIGZpbGw9IiMwYjZlOTMiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 0 0;
+  transition: transform .5s ease;
+}
+
+.candidate-item.true .candidate-item-main:before {
+  transform: rotate(180deg);
 }
 
 .candidate-item__avatar-wrapper {
@@ -145,6 +172,31 @@ body {
   color: #999;
   font-size: 1.4em;
   margin: 0;
+}
+
+.candidate-extrainfo {
+  padding: 2em 2em 4em 7em;
+}
+
+.candidate-extrainfo-line {
+  display: flex;
+  padding: 1em 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.candidate-extrainfo--title,
+.candidate-extrainfo--value {
+  font-size: 1.6em;
+}
+
+.candidate-extrainfo--title {
+  width: 16em;
+  color: #aaa;
+}
+
+.candidate-extrainfo--value {
+  width: 100%;
+  color: #333;
 }
 
 .loading {
@@ -219,9 +271,23 @@ body {
     padding: .6em 1em .7em;
   }
 
-  .candidate-item {
+  .candidate-item-main {
     padding: 2em 1em 1em 13em;
     min-height: 13em;
+  }
+
+  .candidate-item-main:before {
+    right: 2em;
+    top: 2em;
+  }
+
+  .candidate-extrainfo {
+    padding: 0 2em 4em 3em;
+  }
+
+  .candidate-extrainfo--title,
+  .candidate-extrainfo--value {
+    font-size: 1.4em;
   }
 
   .candidate-item__avatar-wrapper {
